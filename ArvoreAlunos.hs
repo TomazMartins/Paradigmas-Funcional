@@ -1,7 +1,4 @@
-module ArvoreAlunos 
-(	insereAluno
-,	excluiAluno
-)where
+module ArvoreAlunos where
 
 import Aluno
 
