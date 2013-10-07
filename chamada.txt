@@ -1,0 +1,21 @@
+01 Barbara Silveira 7.0
+02 Carlos Machado 4.8
+03 Douglas Oliveira 5.6
+04 Felipe Fernandes 9.8
+05 Fernanda Araujo8.4
+06 Gabriela Rodrigues 3.5
+07 Gabriel Lopes 4.9
+08 Hilda Paulino 6.4
+09 Jessica Cardoso 4.5
+10 Karine Vasconcelos 9.4
+11 Larissa da Silva 6.9
+12 Luis Henrique 7.0
+13 Marina Ferreira 7.8
+14 Murilo Gianesine 8.4
+15 Otavio Augusto 4.6
+16 Patricia de Medeiros 8.6
+17 Paulo Agostino 5.6
+18 Rafaela Martins 8.6
+19 Talita Guedes 8.2
+20 Valkiria de Souza 5.7
+ 
