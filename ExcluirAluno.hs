@@ -1,13 +1,14 @@
 module ExcluirAluno
-( excluiAluno
+( excluirAluno
 ) where
 
-import ArvoreAluno
+import Aluno
+import ArvoreAlunos
+import ConfigurarAluno
 
-excluiAluno::Aluno->ArvoreAlunos->ArvoreAlunos
-excluiAluno x NULL = NULL
-excluiAluno x (No y esq dir)
---	| x < y = No y (removeGen x esq) dir
---	| x > y = No y esq (removeGen x dir)
-	| x == y = NULL
-	| otherwise = NULL
+excluirAluno :: Aluno -> ArvoreAlunos -> ArvoreAlunos
+excluirAluno a NULL = NULL
+excluirAluno a (No b esq dir)
+   | ( a ) == ( b ) = NULL
+   | ( a ) /= ( b ) && ( mostrarMatricula a ) > ( mostrarMatricula b ) = excluirAluno a esq
+   | ( a ) /= ( b ) && ( mostrarMatricula a ) < ( mostrarMatricula b ) = excluirAluno a dir
