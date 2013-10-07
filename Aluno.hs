@@ -1,9 +1,6 @@
 module Aluno where
 
-type Matricula = Int
-type Nome = String
-type Nota = Float
-
-type AlunoInfo = (Matricula, Nome, Nota)
-
-data Aluno = Aluno AlunoInfo deriving( Show, Eq, Read )
+data Aluno = Aluno { matricula :: Int
+                   , nome :: String
+                   , nota :: Float
+                   } deriving( Show, Eq, Read )
