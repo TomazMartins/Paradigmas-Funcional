@@ -22,15 +22,17 @@ inserirAluno :: Aluno -> ArvoreAlunos -> ArvoreAlunos
 inserirAluno aluno NULL = (No aluno NULL NULL)
 inserirAluno a (No b esq dir)
 	| (mostrarMatricula a) == (mostrarMatricula b) = (No b esq dir)
-	| (mostrarMatricula a) > (mostrarMatricula b) = inserirAluno a esq
-	| (mostrarMatricula a) < (mostrarMatricula b) = inserirAluno a dir
+	| (mostrarMatricula a) > (mostrarMatricula b) = No b (inserirAluno a esq) dir
+	| (mostrarMatricula a) < (mostrarMatricula b) = No b esq (inserirAluno a dir)
 
 excluirAluno :: Aluno -> ArvoreAlunos -> ArvoreAlunos
 excluirAluno a NULL = NULL
 excluirAluno a (No b esq dir)
    | ( a ) == ( b ) = NULL
-   | ( a ) /= ( b ) && ( mostrarMatricula a ) > ( mostrarMatricula b ) = excluirAluno a esq
-   | ( a ) /= ( b ) && ( mostrarMatricula a ) < ( mostrarMatricula b ) = excluirAluno a dir
+   | ( a ) /= ( b ) && ( mostrarMatricula a ) > ( mostrarMatricula b ) = No b esq (excluirAluno a dir)
+   | ( a ) /= ( b ) && ( mostrarMatricula a ) < ( mostrarMatricula b ) = No b (excluirAluno a esq) dir
+   | esq == NULL = dir
+   | dir == NULL = esq
 
 buscarAluno :: Int -> ArvoreAlunos -> Aluno
 buscarAluno x NULL = Aluno 0 "nao encontrado" 0.0
