@@ -1,9 +1,14 @@
 module InserirAluno
-( insereAluno
+( inserirAluno
 ) where
 
+import Aluno
+import ConfigurarAluno
 import ArvoreAlunos
 
-insereAluno :: Aluno -> ArvoreAlunos -> ArvoreAlunos 
-insereAluno x NULL = (No x NULL NULL)
-insereAluno x (No y esq dir) = No y esq (insereAluno x dir)
+inserirAluno :: Aluno -> ArvoreAlunos -> ArvoreAlunos 
+inserirAluno aluno NULL = (No aluno NULL NULL)
+inserirAluno a (No b esq dir)
+	| (mostrarMatricula a) == (mostrarMatricula b) = (No b esq dir)
+	| (mostrarMatricula a) > (mostrarMatricula b) = inserirAluno a esq
+	| (mostrarMatricula a) < (mostrarMatricula b) = inserirAluno a dir
