@@ -23,6 +23,7 @@ main = do
 	putStrLn "     10 - Finalizar programa."
 	putStrLn "   "
 	opcao <- getLine
+	putStrLn ("Opcao escolhida: " ++ opcao ++ ".")
 	
 
 
