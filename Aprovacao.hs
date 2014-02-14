@@ -8,7 +8,7 @@ import ArvoreAlunos
 import ConfigurarAluno
 
 calcularAprovados :: ArvoreAlunos -> Int
-calcularAprovados NULL = 0
+calcularAprovados NULL = 
 calcularAprovados ( No a esq dir )
 	| (mostrarNota a) > 5.0 = 1 + (calcularAprovados esq) + (calcularAprovados dir)
 	| (mostrarNota a) == 5.0 = 1 + (calcularAprovados esq) + (calcularAprovados dir)
